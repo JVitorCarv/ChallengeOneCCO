@@ -9,7 +9,11 @@ import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { Button } from "@mui/material";
-
+import Electric from "./components/Electric";
+import Mechanical from "./components/Mechanical";
+import Unidentified from "./components/Unidentified";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import ViewData from "./components/ViewData";
 
 //################################# START Firebase Settings ####################################
 //quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
@@ -24,7 +28,6 @@ const app = initializeApp(firebaseConfig);
 // Get a reference to the database service
 const database = getDatabase(app);
 //################################# END Firebase Settings ####################################
-
 
 //################################# APP ####################################
 function App() {
@@ -45,10 +48,18 @@ function App() {
     }
   }
 
+  const navigate = useNavigate();
+
+  function handleClick(data) {
+    console.log(data.nature);
+    if (data) {
+      navigate("/viewdata", { state: data });
+    }
+  }
+
   // Para entender um pouco mais como funciona o useEffect
   // https://pt-br.reactjs.org/docs/hooks-effect.html
   useEffect(() => {
-
     const reference = ref(database, "ativos");
     // se inscreve nos eventos do path "ativos", ou seja, qualquer alteração
     // que ocorrer em "ativos" esse trecho do codigo irá receber os dados atualizados
@@ -64,6 +75,11 @@ function App() {
   return (
     <div className="App">
       {/* Componentes do UI material https://mui.com/pt/components/tables/#dense-table */}
+
+      <Routes>
+        <Route path="/viewdata" element={<ViewData />} />
+      </Routes>
+
       <TableContainer>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
@@ -72,7 +88,7 @@ function App() {
               <TableCell align="right">Tombamento</TableCell>
               <TableCell align="right">Unidade</TableCell>
               <TableCell align="right">Setor</TableCell>
-              <TableCell align="right">Action</TableCell>
+              <TableCell align="right">Mais detalhes</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -88,7 +104,8 @@ function App() {
                 <TableCell align="right">{row.unidade}</TableCell>
                 <TableCell align="right">{row.setor}</TableCell>
                 <TableCell align="right">
-                  <Button>view</Button>
+                  <Button onClick={() => handleClick(row)}>view</Button>{" "}
+                  {/* mudar isso aqui pra ir pra o resto das informacoes do PM. Vai ter que mexer com rota */}
                 </TableCell>
               </TableRow>
             ))}
