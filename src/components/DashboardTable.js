@@ -20,6 +20,13 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 
+
+const natureObj = {
+  1: "Eletrico",
+  2: "Mecânico",
+  undefined: "Não Identificado",
+};
+
 // Get a reference to the database service
 const database = getDatabase(app);
 //################################# END Firebase Settings ####################################
@@ -34,6 +41,7 @@ function DashboardTable() {
     if (response) {
       const mapped = Object.entries(response).map(([key, val]) => ({
         ...val,
+        nature: natureObj[val.nature],
         key,
       }));
 
@@ -72,9 +80,10 @@ function DashboardTable() {
         <TableHead>
           <TableRow>
             <TableCell>Ativo</TableCell>
-            <TableCell align="right">Tombamento</TableCell>
+            <TableCell align="right">ID Alpha</TableCell>
             <TableCell align="right">Unidade</TableCell>
             <TableCell align="right">Setor</TableCell>
+            <TableCell align="right">Natureza</TableCell>
             <TableCell align="right">Mais detalhes</TableCell>
           </TableRow>
         </TableHead>
@@ -90,6 +99,7 @@ function DashboardTable() {
               <TableCell align="right">{row.tombamento}</TableCell>
               <TableCell align="right">{row.unidade}</TableCell>
               <TableCell align="right">{row.setor}</TableCell>
+              <TableCell align="right">{row.nature}</TableCell>
               <TableCell align="right">
                 <Button onClick={() => handleClick(row)}>view</Button>{" "}
                 {/* mudar isso aqui pra ir pra o resto das informacoes do PM. Vai ter que mexer com rota */}

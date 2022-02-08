@@ -1,4 +1,4 @@
-function Electric({ data }) {
-  return <h1>{data}</h1>;
+function Electric({ natureForm }) {
+  return <pre>{JSON.stringify(natureForm, null, 2)}</pre>;
 }
 export default Electric;

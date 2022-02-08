@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       {/* Componentes do UI material https://mui.com/pt/components/tables/#dense-table */}
-      <Container maxWidth="sm">
+      <Container>
         <Routes>
           <Route path="/" element={<DashboardTable />} />
           <Route path="/viewdata" element={<ViewData />} />

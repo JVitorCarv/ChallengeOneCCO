@@ -1,4 +1,4 @@
-function Mechanical(data) {
-  return <h1>{data}</h1>;
+function Mechanical({ natureForm }) {
+  return <pre>{JSON.stringify(natureForm, null, 2)}</pre>;
 }
 export default Mechanical;
