@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.073c9b0a.css",
-    "main.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.a286d6b5.js",
+    "main.css": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.4aa9ef43.css",
+    "main.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.ef7a4765.js",
     "static/js/787.138806ca.chunk.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/787.138806ca.chunk.js",
     "index.html": "https://jvitorcarv.github.io/ChallengeOneCCO/index.html",
-    "main.073c9b0a.css.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.073c9b0a.css.map",
-    "main.a286d6b5.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.a286d6b5.js.map",
+    "main.4aa9ef43.css.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.4aa9ef43.css.map",
+    "main.ef7a4765.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.ef7a4765.js.map",
     "787.138806ca.chunk.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/787.138806ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.a286d6b5.js"
+    "static/css/main.4aa9ef43.css",
+    "static/js/main.ef7a4765.js"
   ]
 }
