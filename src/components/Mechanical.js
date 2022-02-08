@@ -1,4 +1,4 @@
-import { TextField, Checkbox, FormControlLabel } from "@mui/material";
+import { Checkbox, FormControlLabel } from "@mui/material";
 
 function Mechanical({ natureForm }) {
   return (
