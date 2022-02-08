@@ -20,7 +20,6 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 
-
 const natureObj = {
   1: "Eletrico",
   2: "Mecânico",
