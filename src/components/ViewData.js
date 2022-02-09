@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
+import { PREFIX_PATH } from "../helper/constants";
 import Electric from "./Electric";
 import Mechanical from "./Mechanical";
 import Unidentified from "./Unidentified";
@@ -7,11 +8,9 @@ import Unidentified from "./Unidentified";
 function ViewData() {
   const { state } = useLocation();
   const navigate = useNavigate();
-  console.log(state);
-  console.log(state.nature);
 
   const backToTable = () => {
-    navigate("/");
+    navigate(`${PREFIX_PATH}/`);
   };
 
   const RenderNature = ({ nature, natureForm }) => {

@@ -9,6 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { PREFIX_PATH } from "../helper/constants";
 
 //################################# START Firebase Settings ####################################
 //quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
@@ -33,31 +34,31 @@ const database = getDatabase(app);
 
 //################################# APP ####################################
 function DashboardTable() {
-  const [rows, setRows] = useState([]);
+    const navigate = useNavigate();
 
-  // função apenas para manipular a lista de dados que vem do firebase
-  // transforma um objeto em um array
-  function createData(response) {
-    if (response) {
-      const mapped = Object.entries(response).map(([key, val]) => ({
-        ...val,
-        nature: natureObj[val.nature],
-        key,
-      }));
+    const [rows, setRows] = useState([]);
 
-      setRows(mapped);
-    } else {
-      setRows([]);
+    // função apenas para manipular a lista de dados que vem do firebase
+    // transforma um objeto em um array
+    function createData(response) {
+      if (response) {
+        const mapped = Object.entries(response).map(([key, val]) => ({
+          ...val,
+          nature: natureObj[val.nature],
+          key,
+        }));
+
+        setRows(mapped);
+      } else {
+        setRows([]);
+      }
     }
-  }
 
-  const navigate = useNavigate();
-
-  function handleClick(data) {
-    if (data) {
-      navigate("/viewdata", { state: data });
+    function handleClick(data) {
+      if (data) {
+        navigate(`${PREFIX_PATH}/viewdata`, { state: data });
+      }
     }
-  }
 
   // Para entender um pouco mais como funciona o useEffect
   // https://pt-br.reactjs.org/docs/hooks-effect.html
