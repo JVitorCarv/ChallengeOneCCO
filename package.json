@@ -20,8 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env PUBLIC_URL='https://davidwilsonfs.github.io/ChallengeOneCCO/' react-scripts build",
-    "build:vitor": "cross-env PUBLIC_URL='https://jvitorcarv.github.io/ChallengeOneCCO/' react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
