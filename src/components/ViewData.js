@@ -54,7 +54,7 @@ function ViewData() {
         label="Descrição do Problema"
         value={state.problemDescription}
         disabled
-        variant="standard"
+        multiline
       />
       <TextField
         label="Setor"
@@ -74,7 +74,5 @@ function ViewData() {
     </div>
   );
 }
-
-
 
 export default ViewData;

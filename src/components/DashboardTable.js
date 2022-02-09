@@ -21,11 +21,10 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 
-
 const natureObj = {
   1: "Eletrico",
   2: "Mecânico",
-  undefined: "Não Identificado",
+  3: "Não Identificado",
 };
 
 // Get a reference to the database service
