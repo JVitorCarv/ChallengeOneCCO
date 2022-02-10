@@ -4,7 +4,7 @@ function Electric({ natureForm }) {
   return (
     <div className="view-data">
       <p>
-        O problema em questão é elétrico. <br />A seguir, checklist observada
+        O problema em questão é elétrico. <br />Checklist observada
         pelo operador:
       </p>
 
@@ -16,7 +16,7 @@ function Electric({ natureForm }) {
             name="faltaEnergia"
           />
         }
-        label="Há falta de energia na vizinhança?"
+        label="Há falta de energia na vizinhança"
       />
       <FormControlLabel
         control={
@@ -26,7 +26,7 @@ function Electric({ natureForm }) {
             name="chaveFusivel"
           />
         }
-        label="Chave fusível (canela, banana) aberta??"
+        label="Chave fusível (canela, banana) aberta"
       />
       <FormControlLabel
         control={
@@ -36,7 +36,7 @@ function Electric({ natureForm }) {
             name="tensaoNormal"
           />
         }
-        label="Tensão da unidade normal?"
+        label="Tensão da unidade normal"
       />
       <FormControlLabel
         control={
@@ -46,7 +46,7 @@ function Electric({ natureForm }) {
             name="cheiroQueimado"
           />
         }
-        label="Cheiro de queimado?"
+        label="Cheiro de queimado"
       />
     </div>
   );
