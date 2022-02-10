@@ -13,7 +13,7 @@ code {
 }
 
 
-.view-data {
+/* .view-data {
   display: flex;
   flex-direction: column;
   padding: 50px;
@@ -23,4 +23,4 @@ code {
 
 .view-data > div {
   margin: 10px 0;
-}
+} */
