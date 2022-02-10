@@ -8,6 +8,7 @@ import Unidentified from "./Unidentified";
 function ViewData() {
   const { state } = useLocation();
   const navigate = useNavigate();
+  console.log(state);
 
   const backToTable = () => {
     navigate(`${PREFIX_PATH}/`);
@@ -26,48 +27,31 @@ function ViewData() {
 
   return (
     <div className="view-data">
+      <TextField label="Ativo" value={state.ativo} disabled multiline />
       <TextField
-        label="Ativo"
-        value={state.ativo}
-        disabled
-        variant="standard"
-      />
-      <TextField
-        label="Id Alpha"
-        value={state.tombamento}
-        disabled
-        variant="standard"
-      />
-      <TextField
-        label="Nome do Operador"
-        value={state.operatorName}
-        disabled
-        variant="standard"
-      />
-      <TextField
-        label="Telefone do Operador"
-        value={state.operatorPhone}
-        disabled
-        variant="standard"
-      />
-      <TextField
-        label="Descrição do Problema"
-        value={state.problemDescription}
+        label="Descrição do ativo"
+        value={state.ativo_description}
         disabled
         multiline
       />
+      <TextField label="ID Alpha" value={state.id_alpha} disabled multiline />
+      <TextField label="Serial" value={state.serial} disabled multiline />
       <TextField
-        label="Setor"
-        value={state.setor}
+        label="Fabricante"
+        value={state.fabricante}
         disabled
-        variant="standard"
+        multiline
       />
+      <TextField label="Site" value={state.site} disabled multiline />
+      <TextField label="Posição" value={state.posicao} disabled multiline />
+      <TextField label="Status" value={state.status} disabled multiline />
       <TextField
-        label="Unidade"
-        value={state.unidade}
+        label="Tombamento"
+        value={state.tombamento}
         disabled
-        variant="standard"
+        multiline
       />
+      <TextField label="Condição" value={state.condicao} disabled multiline />
 
       <RenderNature nature={state.nature} natureForm={state.natureForm} />
       <Button onClick={backToTable}>Voltar</Button>

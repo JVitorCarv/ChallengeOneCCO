@@ -4,7 +4,7 @@ function Mechanical({ natureForm }) {
   return (
     <div className="view-data">
       <p>
-        O problema em questão é mecânico. <br />A seguir, checklist observada
+        O problema em questão é mecânico. <br />Checklist observada
         pelo operador:
       </p>
 
@@ -16,7 +16,7 @@ function Mechanical({ natureForm }) {
             name="nivelSuccao"
           />
         }
-        label="O nível de succção está normal?"
+        label="O nível de succção está normal"
       />
       <FormControlLabel
         control={
@@ -26,7 +26,7 @@ function Mechanical({ natureForm }) {
             name="nivelSuccao"
           />
         }
-        label="A válvula de succção está aberta?"
+        label="A válvula de succção está aberta"
       />
       <FormControlLabel
         control={
@@ -36,7 +36,7 @@ function Mechanical({ natureForm }) {
             name="valvulaRecalque"
           />
         }
-        label="A válvula de recalque está aberta?"
+        label="A válvula de recalque está aberta"
       />
       <FormControlLabel
         control={
@@ -46,7 +46,7 @@ function Mechanical({ natureForm }) {
             name="vibracaoAnormal"
           />
         }
-        label="A vibração está anormal?"
+        label="A vibração está anormal"
       />
       <FormControlLabel
         control={
@@ -56,7 +56,7 @@ function Mechanical({ natureForm }) {
             name="bombaTravada"
           />
         }
-        label="A bomba está travada?"
+        label="A bomba está travada"
       />
       <FormControlLabel
         control={
@@ -66,7 +66,7 @@ function Mechanical({ natureForm }) {
             name="barulhoAnormal"
           />
         }
-        label="Há um barulho anormal?"
+        label="Há um barulho anormal"
       />
       <FormControlLabel
         control={
@@ -76,7 +76,7 @@ function Mechanical({ natureForm }) {
             name="gaxetaVazamento"
           />
         }
-        label="A gaxeta está com vazamento?"
+        label="A gaxeta está com vazamento"
       />
     </div>
   );
