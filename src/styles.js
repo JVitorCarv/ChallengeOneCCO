@@ -14,7 +14,6 @@ export const StyledHeader = styled.header`
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    padding: 10px;
 
     .content-left {
       display: flex;
@@ -22,6 +21,7 @@ export const StyledHeader = styled.header`
     }
 
     .image-container {
+      margin-left: 10px;
       cursor: pointer;
       width: 40px;
       height: 40px;
@@ -64,5 +64,19 @@ export const ButtonPrimary = styled(Button)`
 
   &:hover {
     color: #8dc544;
+  }
+`;
+
+export const TableDashboard = styled.div`
+  padding: 20px;
+`;
+
+export const StyledViewData = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  div {
+    margin: 10px 0px;
   }
 `;

@@ -2,11 +2,9 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 
 function Mechanical({ natureForm }) {
   return (
-    <div className="view-data">
-      <p>
-        O problema em questão é mecânico. <br />Checklist observada
-        pelo operador:
-      </p>
+    <div>
+      <h1>O problema em questão é Mecânico</h1>
+      <p>Checklist observada pelo operador:</p>
 
       <FormControlLabel
         control={

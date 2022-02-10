@@ -1,6 +1,7 @@
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PREFIX_PATH } from "../helper/constants";
+import { ButtonSecondary, StyledViewData } from "../styles";
 import Electric from "./Electric";
 import Mechanical from "./Mechanical";
 import Unidentified from "./Unidentified";
@@ -26,7 +27,7 @@ function ViewData() {
   };
 
   return (
-    <div className="view-data">
+    <StyledViewData>
       <TextField label="Ativo" value={state.ativo} disabled multiline />
       <TextField
         label="Descrição do ativo"
@@ -54,8 +55,8 @@ function ViewData() {
       <TextField label="Condição" value={state.condicao} disabled multiline />
 
       <RenderNature nature={state.nature} natureForm={state.natureForm} />
-      <Button onClick={backToTable}>Voltar</Button>
-    </div>
+      <ButtonSecondary onClick={backToTable}>Voltar</ButtonSecondary>
+    </StyledViewData>
   );
 }
 

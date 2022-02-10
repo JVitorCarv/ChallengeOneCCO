@@ -7,9 +7,9 @@ import TableRow from "@mui/material/TableRow";
 import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { PREFIX_PATH } from "../helper/constants";
+import { ButtonPrimary, TableDashboard } from "../styles";
 
 //################################# START Firebase Settings ####################################
 //quando depois eu explico para vocês como configura o firebase, por hora podem usar o meu
@@ -33,31 +33,32 @@ const database = getDatabase(app);
 
 //################################# APP ####################################
 function DashboardTable() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState([]);
 
-    // função apenas para manipular a lista de dados que vem do firebase
-    // transforma um objeto em um array
-    function createData(response) {
-      if (response) {
-        const mapped = Object.entries(response).map(([key, val]) => ({
-          ...val,
-          nature: natureObj[val.nature],
-          key,
-        }));
+  // função apenas para manipular a lista de dados que vem do firebase
+  // transforma um objeto em um array
+  function createData(response) {
+    if (response) {
+      const mapped = Object.entries(response).map(([key, val]) => ({
+        ...val,
+        nature: natureObj[val.nature],
+        key,
+      }));
 
-        setRows(mapped);
-      } else {
-        setRows([]);
-      }
+      console.log(mapped);
+      setRows(mapped);
+    } else {
+      setRows([]);
     }
+  }
 
-    function handleClick(data) {
-      if (data) {
-        navigate(`${PREFIX_PATH}/viewdata`, { state: data });
-      }
+  function handleClick(data) {
+    if (data) {
+      navigate(`${PREFIX_PATH}/viewdata`, { state: data });
     }
+  }
 
   // Para entender um pouco mais como funciona o useEffect
   // https://pt-br.reactjs.org/docs/hooks-effect.html
@@ -75,40 +76,44 @@ function DashboardTable() {
   }, []);
 
   return (
-    <TableContainer>
-      <Table sx={{ maxWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Ativo</TableCell>
-            <TableCell align="right">ID Alpha</TableCell>
-            <TableCell align="right">Unidade</TableCell>
-            <TableCell align="right">Setor</TableCell>
-            <TableCell align="right">Natureza</TableCell>
-            <TableCell align="right">Mais detalhes</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.key}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.ativo}
-              </TableCell>
-              <TableCell align="right">{row.tombamento}</TableCell>
-              <TableCell align="right">{row.unidade}</TableCell>
-              <TableCell align="right">{row.setor}</TableCell>
-              <TableCell align="right">{row.nature}</TableCell>
-              <TableCell align="right">
-                <Button onClick={() => handleClick(row)}>view</Button>{" "}
-                {/* mudar isso aqui pra ir pra o resto das informacoes do PM. Vai ter que mexer com rota */}
-              </TableCell>
+    <TableDashboard>
+      <TableContainer>
+        <Table size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Ativo</TableCell>
+              <TableCell align="right">ID Alpha</TableCell>
+              <TableCell align="right">Unidade</TableCell>
+              <TableCell align="right">Posição</TableCell>
+              <TableCell align="right">Natureza</TableCell>
+              <TableCell align="right">Mais detalhes</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.key}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.ativo}
+                </TableCell>
+                <TableCell align="right">{row.tombamento}</TableCell>
+                <TableCell align="right">{row.unidadeOperacional}</TableCell>
+                <TableCell align="right">{row.posicao}</TableCell>
+                <TableCell align="right">{row.nature}</TableCell>
+                <TableCell align="right">
+                  <ButtonPrimary onClick={() => handleClick(row)}>
+                    Visualizar
+                  </ButtonPrimary>{" "}
+                  {/* mudar isso aqui pra ir pra o resto das informacoes do PM. Vai ter que mexer com rota */}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </TableDashboard>
   );
 }
 

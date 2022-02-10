@@ -3,10 +3,8 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 function Electric({ natureForm }) {
   return (
     <div className="view-data">
-      <p>
-        O problema em questão é elétrico. <br />Checklist observada
-        pelo operador:
-      </p>
+      <h1>O problema em questão é Elétrico</h1>
+      <p>Checklist observada pelo operador:</p>
 
       <FormControlLabel
         control={

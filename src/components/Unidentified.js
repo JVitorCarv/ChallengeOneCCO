@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 function Unidentified({ natureForm }) {
   return (
     <div className="view-data">
-      <p>A natureza do problema não foi identificada pelo operador.</p>
+      <h1>A natureza do problema não foi identificada pelo operador.</h1>
 
       {natureForm.description && (
         <TextField
