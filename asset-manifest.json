@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.4aa9ef43.css",
-    "main.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.07c1ddee.js",
+    "main.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.49df67a2.js",
     "static/js/787.138806ca.chunk.js": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/787.138806ca.chunk.js",
     "index.html": "https://jvitorcarv.github.io/ChallengeOneCCO/index.html",
     "main.4aa9ef43.css.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/css/main.4aa9ef43.css.map",
-    "main.07c1ddee.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.07c1ddee.js.map",
+    "main.49df67a2.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/main.49df67a2.js.map",
     "787.138806ca.chunk.js.map": "https://jvitorcarv.github.io/ChallengeOneCCO/static/js/787.138806ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4aa9ef43.css",
-    "static/js/main.07c1ddee.js"
+    "static/js/main.49df67a2.js"
   ]
 }
